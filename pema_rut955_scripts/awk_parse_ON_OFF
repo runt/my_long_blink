@@ -1,0 +1,15 @@
+BEGIN {
+}
+/value/ { 
+  matchON=sprintf("\"value\":\"%s\"",ONState);
+  if(match($2,matchON))
+  {
+    printf("ON");
+  }
+  else
+  {
+    printf("OFF");
+  }
+}
+END {
+}
